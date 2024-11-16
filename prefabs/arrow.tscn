@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://uksj5b2211fp"]
+
+[ext_resource type="SpriteFrames" uid="uid://cjigpwqc1m3c" path="res://anims/note.tres" id="1_11q03"]
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_w7vp5"]
+
+[node name="arrow" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_11q03")
+animation = &"idle3"
+script = ExtResource("1_w7vp5")
