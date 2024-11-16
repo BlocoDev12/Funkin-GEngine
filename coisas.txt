@@ -1,0 +1,10 @@
+note_plus = ((4*60.0)/(140*(Global.real_song_speed)))
+note_speed = 675/((4*60.0)/(140*(Global.real_song_speed)))
+
+song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
+		song_position -= AudioServer.get_output_latency()
+		cur_beat = int(floor(song_position/sec_per_beat))
+		
+		if cur_beat != s_p_b_pas:
+			s_p_b_pas = cur_beat
+			emit_signal("_on_beat",cur_beat)

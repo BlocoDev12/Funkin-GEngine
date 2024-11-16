@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://gu3mu5luqddk"]
+[gd_scene load_steps=5 format=3 uid="uid://gu3mu5luqddk"]
 
 [ext_resource type="Script" path="res://scripts/scenes/PlayState.gd" id="1_nxdbp"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="2_friv8"]
 [ext_resource type="PackedScene" uid="uid://uksj5b2211fp" path="res://prefabs/arrow.tscn" id="3_bvxf7"]
+[ext_resource type="PackedScene" uid="uid://dhrsfuvdgskv1" path="res://prefabs/conductor.tscn" id="4_stgsk"]
 
 [node name="PlayState" type="Node2D"]
 script = ExtResource("1_nxdbp")
@@ -19,26 +20,33 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="arrow0" parent="UI/GUI" instance=ExtResource("3_bvxf7")]
-position = Vector2(255, 162)
+position = Vector2(673.25, 95.3)
 scale = Vector2(0.7, 0.7)
+animation = &"idle0"
 autoplay = "idle0"
 
 [node name="arrow1" parent="UI/GUI" instance=ExtResource("3_bvxf7")]
-position = Vector2(367, 162)
+position = Vector2(783.25, 95.3)
 scale = Vector2(0.7, 0.7)
 animation = &"idle1"
 autoplay = "idle1"
 arrow = 1
 
 [node name="arrow2" parent="UI/GUI" instance=ExtResource("3_bvxf7")]
-position = Vector2(487, 162)
+position = Vector2(893.25, 95.3)
 scale = Vector2(0.7, 0.7)
 animation = &"idle2"
 autoplay = "idle2"
 arrow = 2
 
 [node name="arrow3" parent="UI/GUI" instance=ExtResource("3_bvxf7")]
-position = Vector2(607, 162)
+position = Vector2(1003.25, 95.3)
 scale = Vector2(0.7, 0.7)
 autoplay = "idle3"
 arrow = 3
+
+[node name="spawned_notes" type="Node2D" parent="UI/GUI"]
+
+[node name="inst" parent="." instance=ExtResource("4_stgsk")]
+
+[node name="voices" type="AudioStreamPlayer" parent="."]
